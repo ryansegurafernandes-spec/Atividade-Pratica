@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoio ao Idoso - Cuidado e Carinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Apoio ao Idoso</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="btn-acessibilidade">Aumentar Texto</button>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <h2>Cuidado e atenção para quem sempre cuidou de nós</h2>
+            <p>Conectando famílias a cuidadores qualificados e oferecendo suporte especializado para a melhor idade.</p>
+            <a href="#contato" class="btn-principal">Pedir Ajuda</a>
+        </section>
+
+        <section id="servicos">
+            <h2>Nossos Serviços</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Acompanhamento Diário</h3>
+                    <p>Auxílio nas rotinas diárias, medicação e companhia para passeios.</p>
+                </div>
+                <div class="card">
+                    <h3>Cuidados de Saúde</h3>
+                    <p>Profissionais capacitados para monitoramento e suporte médico primário.</p>
+                </div>
+                <div class="card">
+                    <h3>Atividades Recreativas</h3>
+                    <p>Estímulo cognitivo e motor através de oficinas e exercícios leves.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form id="form-contato">
+                <input type="text" id="nome" placeholder="Seu Nome" required>
+                <input type="tel" id="telefone" placeholder="Seu Telefone" required>
+                <textarea id="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+            <p id="mensagem-sucesso" class="escondido">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Apoio ao Idoso - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
