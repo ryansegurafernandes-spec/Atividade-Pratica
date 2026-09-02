@@ -3,8 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apoio ao Idoso - Cuidado e Carinho</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Apoio e Cuidado ao Idoso</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            transition: font-size 0.2s ease;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #btn-acessibilidade {
+            background-color: #f39c12;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero {
+            background-color: #3498db;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-principal {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        #servicos, #contato {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .escondido {
+            display: none;
+        }
+
+        #mensagem-sucesso {
+            color: #2ecc71;
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -24,8 +168,8 @@
 
     <main>
         <section id="inicio" class="hero">
-            <h2>Cuidado e atenção para quem sempre cuidou de nós</h2>
-            <p>Conectando famílias a cuidadores qualificados e oferecendo suporte especializado para a melhor idade.</p>
+            <h2>Cuidado e atenção para a melhor idade</h2>
+            <p>Conectando famílias a serviços de suporte, acompanhamento e cuidados dedicados aos idosos.</p>
             <a href="#contato" class="btn-principal">Pedir Ajuda</a>
         </section>
 
@@ -34,15 +178,15 @@
             <div class="cards-container">
                 <div class="card">
                     <h3>Acompanhamento Diário</h3>
-                    <p>Auxílio nas rotinas diárias, medicação e companhia para passeios.</p>
+                    <p>Auxílio em rotinas diárias, lembrete de medicações e boa companhia.</p>
                 </div>
                 <div class="card">
                     <h3>Cuidados de Saúde</h3>
-                    <p>Profissionais capacitados para monitoramento e suporte médico primário.</p>
+                    <p>Profissionais preparados para monitorar a saúde e dar suporte contínuo.</p>
                 </div>
                 <div class="card">
-                    <h3>Atividades Recreativas</h3>
-                    <p>Estímulo cognitivo e motor através de oficinas e exercícios leves.</p>
+                    <h3>Atividades e Lazer</h3>
+                    <p>Estímulo cognitivo e motor através de jogos, leituras e passeios leves.</p>
                 </div>
             </div>
         </section>
@@ -63,6 +207,33 @@
         <p>&copy; 2026 Apoio ao Idoso - Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Função para aumentar o tamanho do texto (Recurso de acessibilidade)
+        const btnAcessibilidade = document.getElementById('btn-acessibilidade');
+        let fonteAumentada = false;
+
+        btnAcessibilidade.addEventListener('click', () => {
+            if (!fonteAumentada) {
+                document.body.style.fontSize = '1.25rem';
+                btnAcessibilidade.textContent = 'Tamanho Normal';
+                fonteAumentada = true;
+            } else {
+                document.body.style.fontSize = '1rem';
+                btnAcessibilidade.textContent = 'Aumentar Texto';
+                fonteAumentada = false;
+            }
+        });
+
+        // Manipulação do formulário de contato
+        const formulario = document.getElementById('form-contato');
+        const mensagemSucesso = document.getElementById('mensagem-sucesso');
+
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault();
+            formulario.style.display = 'none';
+            mensagemSucesso.classList.remove('escondido');
+        });
+    </script>
+
 </body>
 </html>
